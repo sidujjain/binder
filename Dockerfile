@@ -7,6 +7,10 @@ RUN pip install --no-cache --upgrade pip && \
 
 RUN jupyter serverextension enable --py nbgitpuller --sys-prefix
 
+RUN if [ -f "requirements.txt" ] ; \
+  then pip install --no-cache -r requirements.txt; \
+  fi
+
 # create user with a home directory
 ARG NB_USER=jovyan
 ARG NB_UID=1000
@@ -24,7 +28,3 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
-
-RUN if [ -f "requirements.txt" ] ; \
-  then pip install --no-cache -r requirements.txt; \
-  fi
