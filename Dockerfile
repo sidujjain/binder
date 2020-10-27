@@ -24,3 +24,7 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
+
+RUN if [ -f "requirements.txt" ] ; \
+  then pip install --no-cache -r requirements.txt; \
+  fi
