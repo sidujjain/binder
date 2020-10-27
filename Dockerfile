@@ -1,13 +1,9 @@
-FROM gcr.io/kaggle-images/python:v60
+FROM gcr.io/kaggle-images/python:v89
 
-# install the notebook and nbgitpuller packages
-RUN pip install --no-cache --upgrade pip && \
-    pip install --no-cache notebook && \
-    pip install --no-cache nbgitpuller
+# Install remaining required packages
+RUN pip install --no-cache jovian
 
-RUN jupyter serverextension enable --py nbgitpuller --sys-prefix
-
-# create user with a home directory
+# Create user with a home directory
 ARG NB_USER=jovyan
 ARG NB_UID=1000
 ENV USER ${NB_USER}
@@ -24,9 +20,10 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 
+# Install packages from requirements.txt, if present
 RUN if [ -f "requirements.txt" ] ; \
   then pip install --no-cache -r requirements.txt; \
   fi
-RUN rm Dockerfile
 
+RUN rm Dockerfile
 USER ${NB_USER}
