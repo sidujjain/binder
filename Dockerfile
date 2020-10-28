@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM gcr.io/kaggle-images/python:v89
 
 # Install remaining required packages
 RUN pip install --no-cache --upgrade pip && \
