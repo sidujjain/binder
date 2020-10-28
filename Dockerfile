@@ -27,4 +27,5 @@ RUN chown -R ${NB_UID} ${HOME}
 #   then pip install --no-cache -r requirements.txt; \
 #   fi
 
+RUN rm Dockerfile
 USER ${NB_USER}
