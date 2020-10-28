@@ -1,4 +1,4 @@
-FROM gcr.io/kaggle-images/python:v89
+FROM jupyter/scipy-notebook:45bfe5a474fa
 
 # Install remaining required packages
 RUN pip install --no-cache --upgrade pip && \
