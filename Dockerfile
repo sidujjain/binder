@@ -20,6 +20,8 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 
+RUN ls /home
+
 # Install packages from requirements.txt, if present
 # RUN if [ -f "requirements.txt" ] ; \
 #   then pip install --no-cache -r requirements.txt; \
