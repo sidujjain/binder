@@ -1,7 +1,11 @@
 FROM jupyter/scipy-notebook:45bfe5a474fa
 
 # Install remaining required packages
-RUN pip install --no-cache jovian
+RUN pip install --no-cache jovian==0.2.24 && \
+    pip install --no-cache jupyteranalytics && \
+    pip install --no-cache torch
+
+RUN jupyter serverextension enable --py jupyteranalytics --sys-prefix
 
 # Create user with a home directory
 ARG NB_USER=jovyan
