@@ -3,7 +3,7 @@ FROM jupyter/scipy-notebook:45bfe5a474fa
 # Install remaining required packages
 RUN pip install --no-cache jovian==0.2.24 && \
     pip install --no-cache jupyteranalytics && \
-    pip install --no-cache torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio==0.7.0
+    pip install --no-cache torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
 
 RUN jupyter serverextension enable --py jupyteranalytics --sys-prefix
 
