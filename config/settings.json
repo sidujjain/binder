@@ -1,0 +1,32 @@
+{
+    "files.exclude": {
+      "**/.ipynb_checkpoints": true,
+      "**/.bashrc": true,
+      "**/.cache": true,
+      "**/.config": true,
+      "**/.jupyter": true,
+      "**/.local": true,
+      "**/.npm": true,
+      "**/.yarn": true,
+      "**/jupyter_vscode_proxy.egg-info": true,
+      "**/.jovianrc": true
+    },
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.startupEditor": "none",
+    "editor.minimap.enabled": false,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+      "editor.formatOnType": true
+    },
+    "editor.inlineSuggest.enabled": true
+  }
+  

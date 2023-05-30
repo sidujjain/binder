@@ -40,8 +40,8 @@ USER ${NB_USER}
 
 RUN pip install nbgitpuller
 
-COPY --chown=${NB_USER}:${NB_USER_GROUP} images/binder/settings.json ${HOME}/.local/share/code-server/User/
-COPY --chown=${NB_USER}:${NB_USER_GROUP} images/binder/jupyter_notebook_config.py ${HOME}/.jupyter/
+COPY --chown=${NB_USER}:${NB_USER_GROUP} config/settings.json ${HOME}/.local/share/code-server/User/
+COPY --chown=${NB_USER}:${NB_USER_GROUP} config/jupyter_notebook_config.py ${HOME}/.jupyter/
 
 RUN code-server --install-extension ms-python.python
 RUN code-server --install-extension ms-toolsai.jupyter
